@@ -1,0 +1,26 @@
+version: '3'
+
+networks:
+  frontend:
+    driver: bridge
+  backend:
+    driver: bridge
+
+services:
+  shadowsocks:
+    build: 
+      context: ./shadowsocks
+      ports: "8488:8488"
+    networks:
+      - frontend
+      - backend
+    args:
+      - PASSWORD=${SHADOWSOCKS_PASSWORD}
+  golang:
+    build:
+      context: ./golang
+    ports:
+      - "8080:8080"
+    networks:
+      - frontend
+      - backend
