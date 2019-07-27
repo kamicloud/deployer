@@ -13,7 +13,7 @@ services:
       args:
         - PASSWORD=${SHADOWSOCKS_PASSWORD}
     ports: 
-      - "8488:8488"
+      - "${SHADOWSOCKS_PORT}:10086"
     networks:
       - frontend
       - backend
