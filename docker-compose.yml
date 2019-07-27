@@ -10,12 +10,13 @@ services:
   shadowsocks:
     build: 
       context: ./shadowsocks
-      ports: "8488:8488"
+      args:
+        - PASSWORD=${SHADOWSOCKS_PASSWORD}
+    ports: 
+      - "8488:8488"
     networks:
       - frontend
       - backend
-    args:
-      - PASSWORD=${SHADOWSOCKS_PASSWORD}
   golang:
     build:
       context: ./golang
