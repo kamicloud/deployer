@@ -2,9 +2,6 @@ FROM golang:latest
 
 LABEL maintainer="kamicloud"
 
-RUN go get -u github.com/kamicloud/mahjong-science-server
+ADD ./startup.sh ~/startup.sh
 
-RUN cd /go/src/github.com/kamicloud/mahjong-science-server && go build
-
-ENTRYPOINT [ "mahjong-science-server" ]
-# CMD ["/bin/bash", "/go/src/github.com/kamicloud/mahjong-science-server/mahjong-science-server"]
+ENTRYPOINT ["/bin/bash", "~/startup.sh"]

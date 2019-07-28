@@ -24,6 +24,10 @@ services:
   golang:
     build:
       context: ./golang
+    volumes:
+      - ${DATA_PATH_HOST}/go/src:/go/src
+      - ${DATA_PATH_HOST}/go/bin:/go/bin
+      - ${DATA_PATH_HOST}/go/pkg:/go/pkg
     ports:
       - "8080:8080"
     networks:
