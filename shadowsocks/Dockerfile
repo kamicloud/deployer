@@ -1,9 +1,10 @@
 FROM golang:latest
 
+LABEL maintainer="kamicloudxxxxxxxxx"
+
 ARG PASSWORD
+ENV PASSWORD ${PASSWORD}
 
-RUN go get -u github.com/shadowsocks/go-shadowsocks2
+ADD ./startup.sh /opt/startup.sh
 
-RUN cd /go/src/github.com/shadowsocks/go-shadowsocks2 && go build
-
-ENTRYPOINT [ "go-shadowsocks2", "-s", "'ss://AES-128-CFB:${PASSWORD}@:10086'", "-verbose" ]
+CMD ["/bin/bash", "/opt/startup.sh"]
