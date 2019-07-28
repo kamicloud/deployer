@@ -1,8 +1,8 @@
 FROM golang:latest
 
-LABEL maintainer="kamicloudxxxxxxxxx"
+LABEL maintainer="kamicloud"
 
-ARG PASSWORD
+ARG PASSWORD=123456
 ENV PASSWORD ${PASSWORD}
 
 ADD ./startup.sh /opt/startup.sh
