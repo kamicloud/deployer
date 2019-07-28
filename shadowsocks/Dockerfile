@@ -5,6 +5,6 @@ LABEL maintainer="kamicloud"
 ARG PASSWORD=123456
 ENV PASSWORD ${PASSWORD}
 
-ADD ./startup.sh /opt/startup.sh
+ADD ./startup.sh ~/startup.sh
 
-CMD ["/bin/bash", "/opt/startup.sh"]
+ENTRYPOINT ["/bin/bash", "~/startup.sh"]

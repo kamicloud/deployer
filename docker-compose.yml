@@ -12,9 +12,10 @@ services:
       context: ./shadowsocks
       args:
         - PASSWORD=${SHADOWSOCKS_PASSWORD}
-
     volumes:
-      - ${DATA_PATH_HOST}/go:/go
+      - ${DATA_PATH_HOST}/go/src:/go/src
+      - ${DATA_PATH_HOST}/go/bin:/go/bin
+      - ${DATA_PATH_HOST}/go/pkg:/go/pkg
     ports: 
       - "${SHADOWSOCKS_PORT}:10086"
     networks:
