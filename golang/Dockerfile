@@ -1,4 +1,5 @@
-FROM golang:latest
+
+FROM ttdnts/mahjong-science-server:latest
 
 LABEL maintainer="kamicloud"
 
