@@ -1,5 +1,5 @@
 
-FROM ttdnts/mahjong-science-server:latest
+FROM registry.cn-shenzhen.aliyuncs.com/kamicloud/test2:1.0.0
 
 LABEL maintainer="kamicloud"
 
