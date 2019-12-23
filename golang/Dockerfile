@@ -1,5 +1,5 @@
 
-FROM registry.cn-shenzhen.aliyuncs.com/kamicloud/test2:1.0.0
+FROM registry.cn-shenzhen.aliyuncs.com/kamicloud/mahjong-science-server:0.0.1
 
 LABEL maintainer="kamicloud"
 
