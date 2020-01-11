@@ -26,6 +26,7 @@ services:
       context: ./golang
     volumes:
       - ./golang/conf:/go/conf
+      - ${DATA_PATH_HOST}/golang/storage:/root/storage
     ports:
       - "8080:8080"
     networks:
@@ -40,7 +41,6 @@ services:
       - ./nginx/ssl/:/etc/nginx/ssl
       - ../majsoul-resources/extendRes/:/var/www/files.juehaodiao.xyz/majsoul/extendRes
       - ../majsoul-resources/audio/:/var/www/files.juehaodiao.xyz/majsoul/audio
-      - ${DATA_PATH_HOST}/golang/storage:~/storage
     depends_on:
         - golang
     ports:
