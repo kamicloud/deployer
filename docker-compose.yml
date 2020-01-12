@@ -26,6 +26,7 @@ services:
       context: ./golang
     volumes:
       - ./golang/conf:/go/conf
+      - ./logs/golang/:/root/logs
       - ${DATA_PATH_HOST}/golang/storage:/root/storage
     ports:
       - "8080:8080"
